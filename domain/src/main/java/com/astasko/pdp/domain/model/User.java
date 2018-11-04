@@ -15,6 +15,14 @@ public class User extends BaseEntity<Long> {
     private String email;
     private StoredEntity storedEntity;
 
+    private User() {
+        firstName = null;
+        lastName = null;
+        password = null;
+        email = null;
+        storedEntity = null;
+    }
+
     private User(UserBuilder builder) {
         this.setId(builder.id);
         this.email = builder.email;
@@ -95,7 +103,7 @@ public class User extends BaseEntity<Long> {
         private String email;
         private StoredEntity storedEntity;
 
-        private UserBuilder() {
+        public UserBuilder() {
             id = null;
             firstName = null;
             lastName = null;
